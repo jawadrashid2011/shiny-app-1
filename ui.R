@@ -17,7 +17,8 @@ shinyUI(fluidPage(
                         br(),
                         p("span does the same thing as div, but it works with",
                           span("groups of words", style = "color:blue"),
-                          "that appear inside a paragraph.")
+                          "that appear inside a paragraph."),
+                        img(src="bigorb.png", height = 400, width = 400)
                 )
         )
 ))
