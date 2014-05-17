@@ -5,20 +5,32 @@ library(shiny)
 shinyUI(fluidPage(
         titlePanel("My Shiny App"),
         sidebarLayout(
-                sidebarPanel(),
+                sidebarPanel(
+                        h2("Installation"),
+                        p("Shiny is available on CRAN, so you can install it in 
+                          the usal way from your R console:"),
+                        code('install.packages("shiny")'),
+                        br(),
+                        br(),
+                        br(),
+                        p(img(src="bigorb.png", width=75, height=75),"shiny is a production of", 
+                          a("RStudio",href="https://www.rstudio.com/"))
+                ),
                 mainPanel(
-                        p("p creates a paragraph of text. Note: this paragraph is followed by br(), which makes a blank line."),
-                        p("A new p() command starts a new paragraph. Supply a style attribute to change the format of the entire paragraph", style = "font-family: 'times'; font-si16pt"),
-                        strong("strong() makes bold text."),
-                        em("em() creates italicized (i.e, emphasized) text."),
+                        h2("Introduction Shiny"),
+                        p("Shiny is a new package from RStudio that makes it ",
+                          em("incredibly easy"),
+                            "to build interactive web applications with R."),
                         br(),
-                        code("code displays your text similar to computer code"),
-                        div("div creates segments of text with a similar style. This division of text is all blue because I passed the argument 'style = color:blue' to div", style = "color:blue"),
+                        p("For an introduction and live examples, visit the ",
+                          a("Shiny homepage", href="http://shiny.rstudio.com/")),
                         br(),
-                        p("span does the same thing as div, but it works with",
-                          span("groups of words", style = "color:blue"),
-                          "that appear inside a paragraph."),
-                        img(src="bigorb.png", height = 400, width = 400)
+                        h2("Features"),
+                        p("* Build useful web applications with only a few line of code-no JavaScript reqruied."),
+                        p("* Shiny applications are automatically \"live\" in the same that ",
+                          strong("spreadsheets"), "are live. Outputs change instantly as users
+                          modify input, without requiring a reload of the browser")
+                        
                 )
         )
 ))
